@@ -65,7 +65,7 @@ const ResourcePage = () => {
                       📄 {res.title}
                     </h5>
                     <a
-                      href={`http://localhost:5000${res.fileUrl}`}
+                      href={`https://aivsc-backend.onrender.com${res.fileUrl}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn btn-outline-primary"
