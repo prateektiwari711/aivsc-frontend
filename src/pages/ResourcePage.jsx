@@ -16,17 +16,24 @@ const ResourcePage = () => {
   const [resources, setResources] = useState([]);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    axios
-      .get(
-        `https://aivsc-backend.onrender.com/api/resources/category/${category}`
-      )
-      .then((res) => setResources(res.data))
-      .catch((err) => {
-        console.error(`Failed to load ${category}`, err);
-        setError("Failed to fetch resources. Please try again later.");
-      });
-  }, [category]);
+ useEffect(() => {
+  axios
+    .get(
+      `https://aivsc-backend.onrender.com/api/resources/category/${category}`
+    )
+    .then((res) => {
+      // 🔠 Sort alphabetically by title (case-insensitive)
+      const sortedResources = res.data.sort((a, b) =>
+        a.title.localeCompare(b.title, undefined, { sensitivity: 'base' })
+      );
+      setResources(sortedResources);
+    })
+    .catch((err) => {
+      console.error(`Failed to load ${category}`, err);
+      setError("Failed to fetch resources. Please try again later.");
+    });
+}, [category]);
+
 
   const title = categoryTitles[category] || "📄 Resources";
 
