@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import DashboardCard from "../components/DashBoardCard";
+import DashboardCard from "../components/DashboardCard";
 
 function Home() {
   const navigate = useNavigate();
