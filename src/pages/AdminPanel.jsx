@@ -13,7 +13,7 @@ const AdminPanel = () => {
   const fetchResources = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/resources/category/${category}`
+        `https://aivsc-backend.onrender.com/api/resources/category/${category}`
       );
       setResources(res.data);
     } catch (err) {
@@ -35,7 +35,7 @@ const AdminPanel = () => {
     formData.append("file", file);
 
     try {
-      await axios.post("http://localhost:5000/api/resources/upload", formData, {
+      await axios.post("https://aivsc-backend.onrender.com/api/resources/upload", formData, {
         headers: {
           Authorization: token,
           "Content-Type": "multipart/form-data",
