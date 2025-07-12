@@ -31,10 +31,12 @@ const AdminLogin = () => {
   return (
     <div
       className="container d-flex justify-content-center align-items-center"
-      style={{ minHeight: "100vh" }}
+      style={{ minHeight: "100vh", backgroundColor: "#27374D" }}
     >
       <div className="card shadow p-4 w-100" style={{ maxWidth: "400px" }}>
-        <h3 className="mb-4 text-center text-primary">Admin Login</h3>
+        <h3 className="mb-4 text-center" style={{ color: "#27374D" }}>
+          Admin Login
+        </h3>
         {error && <div className="alert alert-danger">{error}</div>}
 
         <form onSubmit={handleLogin}>
@@ -62,7 +64,11 @@ const AdminLogin = () => {
             />
           </div>
 
-          <button type="submit" className="btn btn-primary w-100">
+          <button
+            type="submit"
+            className="btn btn-primary w-100"
+            style={{ backgroundColor: "#27374D" }}
+          >
             Login
           </button>
         </form>

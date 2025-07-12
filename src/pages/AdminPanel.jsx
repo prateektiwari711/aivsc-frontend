@@ -13,7 +13,7 @@ const AdminPanel = () => {
   const fetchResources = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/resources/category/${category}`
+        `https://aivsc-backend.onrender.com/api/resources/category/${category}`
       );
       setResources(res.data);
     } catch (err) {
@@ -35,17 +35,21 @@ const AdminPanel = () => {
     formData.append("file", file);
 
     try {
-      await axios.post("http://localhost:5000/api/resources/upload", formData, {
-        headers: {
-          Authorization: token,
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await axios.post(
+        "https://aivsc-backend.onrender.com/api/resources/upload",
+        formData,
+        {
+          headers: {
+            Authorization: token,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
 
       setMessage("✅ File uploaded successfully");
       setTitle("");
       setFile(null);
-      fetchResources(); // refresh after upload
+      fetchResources();
     } catch (error) {
       console.error(error);
       setMessage("❌ Upload failed");
@@ -64,7 +68,7 @@ const AdminPanel = () => {
       );
 
       setMessage("🗑️ File deleted");
-      fetchResources(); // refresh after delete
+      fetchResources();
     } catch (err) {
       console.error("Delete failed", err);
       setMessage("❌ Delete failed");
@@ -73,7 +77,9 @@ const AdminPanel = () => {
 
   return (
     <div className="container mt-4">
-      <h3 className="text-primary mb-3">Upload Study Resource</h3>
+      <h3 className="mb-3" style={{ color: "#27374D" }}>
+        Upload Study Resource
+      </h3>
       <form onSubmit={handleUpload}>
         <div className="mb-3">
           <label className="form-label">Title:</label>
@@ -111,7 +117,11 @@ const AdminPanel = () => {
           />
         </div>
 
-        <button className="btn btn-success" type="submit">
+        <button
+          className="btn btn-success"
+          type="submit"
+          style={{ backgroundColor: "#27374D" }}
+        >
           Upload
         </button>
       </form>
@@ -120,7 +130,7 @@ const AdminPanel = () => {
 
       <hr />
 
-      <h4 className="text-secondary">Uploaded Files ({category})</h4>
+      <h4 className="text-secondary">Uploaded Files :-({category})</h4>
       <ul className="list-group">
         {resources.map((res) => (
           <li

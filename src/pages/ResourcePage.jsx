@@ -33,11 +33,11 @@ const ResourcePage = () => {
   return (
     <div
       className="container-fluid py-5 px-4"
-      style={{ backgroundColor: "#e6f7ff", minHeight: "100vh" }}
+      style={{ backgroundColor: "#393E46", minHeight: "100vh" }}
     >
       <h2
         className="text-center mb-5"
-        style={{ color: "#007acc", fontWeight: "bold" }}
+        style={{ color: "#DDE6ED", fontWeight: "bold" }}
       >
         {title}
       </h2>
@@ -58,18 +58,22 @@ const ResourcePage = () => {
                 <div
                   key={res._id}
                   className="card mb-4 shadow-sm border-0"
-                  style={{ borderRadius: "16px", backgroundColor: "#ffffff" }}
+                  style={{
+                    borderRadius: "16px",
+                    backgroundColor: "#DDE6ED",
+                  }}
                 >
-                  <div className="card-body d-flex justify-content-between align-items-center">
-                    <h5 className="card-title mb-0 text-primary">
-                      📄 {res.title}
-                    </h5>
+                  <div
+                    className="card-body d-flex justify-content-between align-items-center"
+                    style={{ color: "#27374D" }}
+                  >
+                    <h5 className="card-title mb-0">📄 {res.title}</h5>
                     <a
-                      href={`http://localhost:5000${res.fileUrl}`}
+                      href={`https://aivsc-backend.onrender.com${res.fileUrl}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn btn-outline-primary"
-                      style={{ borderRadius: "10px" }}
+                      className="btn btn-outline-dark"
+                      style={{ borderRadius: "10px", color: "#27374D" }}
                     >
                       Open PDF
                     </a>

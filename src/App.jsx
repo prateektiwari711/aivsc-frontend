@@ -6,6 +6,8 @@ import AdminLogin from "./pages/AdminLogin";
 import ResourcePage from "./pages/ResourcePage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import DeveloperPage from "./pages/Developer";
+import Developer from "./pages/Developer";
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
           <Route path="/resources/:category" element={<ResourcePage />} />
           <Route path="/admin-panel" element={<AdminPanel />} />
           <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/developer" element={<Developer />} />
         </Routes>
       </div>
     </Router>

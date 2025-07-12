@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import DashboardCard from "../components/DashBoardCard";
+import DashboardCard from "../components/DashboardCard";
 
 function Home() {
   const navigate = useNavigate();
@@ -8,7 +8,7 @@ function Home() {
   return (
     <div
       className="d-flex flex-wrap w-100 p-3"
-      style={{ background: "#e6f7ff" }}
+      style={{ background: "#27374D" }}
     >
       <div className="row">
         <div className="col-12 col-md-6 mb-4">
